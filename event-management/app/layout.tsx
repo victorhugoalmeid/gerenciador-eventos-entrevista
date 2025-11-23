@@ -1,11 +1,12 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { ReduxProvider } from "../src/store/ReduxProvider";
+import { ReduxProvider } from "@/store/ReduxProvider";
+import { AppHeader } from "@/components/AppHeader";
 
 export const metadata: Metadata = {
-  title: "Event Management",
-  description: "Event Management System Challenge",
+  title: "Gestão de Eventos",
+  description: "Desafio : Sistema de Gestão de Eventos",
 };
 
 export default function RootLayout({
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <AppHeader />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
