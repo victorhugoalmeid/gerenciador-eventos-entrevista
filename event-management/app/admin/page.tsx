@@ -1,18 +1,18 @@
-// app/events/page.tsx
+// app/admin/page.tsx
 "use client";
 
 import { Container, Typography } from "@mui/material";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
-export default function EventsListPage() {
+export default function AdminDashboardPage() {
   return (
-    <ProtectedRoute allowedRoles={["admin", "reader"]}>
+    <ProtectedRoute allowedRoles={["admin"]}>
       <Container maxWidth="lg" sx={{ mt: 8 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Eventos
+          Painel do Administrador
         </Typography>
         <Typography variant="body1">
-          Aqui leitores e administradores podem visualizar os eventos cadastrados.
+          Aqui o administrador poderá criar, editar, excluir e visualizar eventos.
         </Typography>
       </Container>
     </ProtectedRoute>

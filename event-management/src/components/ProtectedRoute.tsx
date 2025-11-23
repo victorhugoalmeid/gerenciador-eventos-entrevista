@@ -50,3 +50,6 @@ export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) 
 
   return <>{children}</>;
 }
+//Centralizei a lógica de autorização em um componente ProtectedRoute, que verifica autenticação e papel do usuário via Redux
+//e decide se mantém a página, redireciona ou mostra um loading.
+//Isso vai evitar duplicar lógica de proteção em cada página.
