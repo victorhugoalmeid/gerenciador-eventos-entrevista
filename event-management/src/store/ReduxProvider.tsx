@@ -1,8 +1,8 @@
 // src/store/ReduxProvider.tsx
-'use client';
+"use client";
 
-import { Provider } from 'react-redux';
-import { store } from './store';
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 type ReduxProviderProps = {
   children: React.ReactNode;
