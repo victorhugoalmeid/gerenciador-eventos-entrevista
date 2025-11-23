@@ -36,3 +36,4 @@ export async function deleteEvent(id: number) {
   await api.delete(`/events/${id}`);
   return id;
 }
+//vhaa Aqui eu isolei o acesso à API de eventos.
