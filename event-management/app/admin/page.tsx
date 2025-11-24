@@ -125,3 +125,7 @@ export default function AdminDashboardPage() {
     </ProtectedRoute>
   );
 }
+//vhaa Ao invés de usar useEffect para sincronizar props com state 
+//que o próprio React hoje desincentiva e mostra um warnning 
+//No painel do admin, integrei o formulário de criação/edição com o Redux. Ao clicar em editar, o formulário é preenchido com o evento atual
+//Ao salvar, decido se é create ou update baseado na presença de id. A listagem é carregada via thunk loadEvents, e delete chama o thunk removeEvent
