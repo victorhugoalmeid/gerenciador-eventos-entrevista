@@ -1,17 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@events.com",
       "password": "admin123",
       "role": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "reader@events.com",
       "password": "reader123",
       "role": "reader"
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": "bf7a",
+      "name": "Novo evento teste 2",
+      "date": "2026-03-07T20:20",
+      "location": "Floripa",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "category": "Webinar"
+    }
+  ]
 }
