@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Gestão de Eventos — Guia Rápido
 
-## Getting Started
+Aplicação Next.js com Material UI e Redux para CRUD de eventos. Usa `json-server` como API mock em `http://localhost:3001`.
 
-First, run the development server:
+### Requisitos
+- Node.js 18+ (recomendado LTS)
+- npm (incluso no Node)
 
+### Instalação
+1. Instale dependências:
+   ```bash
+   npm install
+   ```
+2. (Opcional) Ajuste a API base em `src/services/api.ts` se precisar outro host/porta.
+
+### Executando localmente
+1. Suba a API mock em um terminal:
+   ```bash
+   npm run json-server
+   # disponível em http://localhost:3001
+   ```
+2. Em outro terminal, suba o app:
+   ```bash
+   npm run dev
+   # app em http://localhost:3000
+   ```
+
+Credenciais de teste (definidas em `db.json`):
+- Admin: `admin@events.com` / `admin123`
+- Leitor: `reader@events.com` / `reader123`
+
+### Scripts úteis
+- `npm run dev` — modo desenvolvimento.
+- `npm run build` — build de produção.
+- `npm start` — roda o build.
+- `npm run lint` — lint com ESLint.
+- `npm test` — testes com Jest.
+- `npm run json-server` — API mock com `db.json`.
+
+### Testes
+Execute todos os testes:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
 ```
+Ambiente de testes usa `jest-environment-jsdom` e `ts-jest` (ver `jest.config.mjs`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clonar o repositório e acessar o projeto
+Caso esteja trabalhando a partir do fork do repositório oficial:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+git clone https://github.com/<seu-usuario>/developer-challenges.git
+cd developer-challenges/event-management
 
-## Learn More
+2. Instalar dependências
+Dentro da pasta event-management:
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+3. Subir a API fake (json-server)
+Em um terminal separado, dentro de event-management:
+npm run json-server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Subir a aplicação Next.js
+Em outro terminal, também dentro de event-management:
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
