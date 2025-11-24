@@ -21,6 +21,30 @@
       "location": "Floripa",
       "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "category": "Webinar"
+    },
+    {
+      "id": "7426",
+      "name": "evento1",
+      "date": "2026-02-01T00:00",
+      "location": "bc",
+      "description": "dasasdsadsa dsadasdsa dasdsadasdasdas dsadsadas das dasd. dsa dsadsadasd ",
+      "category": "Conference"
+    },
+    {
+      "id": "58e5",
+      "name": "evento 3",
+      "date": "2026-02-01T00:01",
+      "location": "bcaa",
+      "description": "dasasdsadsa dsadasdsa dasdsadasdasdas dsadsadas das dasd. dsa dsadsadasd sadasdasda",
+      "category": "Networking"
+    },
+    {
+      "id": "4453",
+      "name": "evento passado",
+      "date": "2025-11-23T22:10",
+      "location": "Kkkkkk",
+      "description": " desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
+      "category": "Other"
     }
   ]
 }
