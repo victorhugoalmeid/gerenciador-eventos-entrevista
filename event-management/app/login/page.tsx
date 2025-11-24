@@ -7,10 +7,14 @@ import {
   Box,
   Button,
   Container,
+  IconButton,
+  InputAdornment,
   TextField,
   Typography,
   Alert,
 } from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { login } from "@/features/auth/authSlice";
 
@@ -23,6 +27,7 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState("admin@events.com");
   const [password, setPassword] = useState("admin123");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -52,7 +57,7 @@ export default function LoginPage() {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          Event Management – Login
+          Gestão de Eventos – Login
         </Typography>
 
         <Typography variant="body2" sx={{ mb: 2 }}>
@@ -80,12 +85,25 @@ export default function LoginPage() {
 
           <TextField
             label="Senha"
-            type="password"
+            type={showPassword ? "text" : "password"}
             fullWidth
             margin="normal"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
 
           <Button

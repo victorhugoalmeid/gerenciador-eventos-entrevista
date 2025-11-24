@@ -5,8 +5,8 @@ import { AppHeader } from "@/components/AppHeader";
 import { ThemeRegistry } from "@/theme/ThemeRegistry";
 
 export const metadata: Metadata = {
-  title: "Event Management",
-  description: "Event Management System Challenge",
+  title: "Gestão de Eventos",
+  description: "Desafio Sistema de Gestão de Eventos",
 };
 
 export default function RootLayout({
