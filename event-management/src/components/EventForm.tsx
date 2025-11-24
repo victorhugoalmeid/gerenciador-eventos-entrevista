@@ -90,7 +90,11 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ mt: 2, display: "flex", flexDirection: "column", gap: 1 }}
+    >
       <Typography variant="h6" gutterBottom>
         {initialEvent ? "Editar evento" : "Criar novo evento"}
       </Typography>
@@ -160,7 +164,9 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
         ))}
       </TextField>
 
-      <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+      <Box
+        sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mt: 2 }}
+      >
         <Button type="submit" variant="contained">
           {initialEvent ? "Salvar alterações" : "Criar evento"}
         </Button>

@@ -58,7 +58,7 @@ export default function AdminDashboardPage() {
 
   return (
     <ProtectedRoute allowedRoles={["admin"]}>
-      <Container maxWidth="lg" sx={{ mt: 8, mb: 4 }}>
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 6, px: { xs: 2, md: 4 } }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Painel do Administrador
         </Typography>

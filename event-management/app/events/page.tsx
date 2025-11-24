@@ -107,15 +107,15 @@ export default function EventsListPage() {
 
   return (
     <ProtectedRoute allowedRoles={["admin", "reader"]}>
-      <Container maxWidth="lg" sx={{ mt: 8, mb: 4 }}>
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 6, px: { xs: 2, md: 4 } }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Eventos
         </Typography>
 
         <Box
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "1fr 200px 180px 160px" },
             gap: 2,
             mt: 2,
             mb: 2,
