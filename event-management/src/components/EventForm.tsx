@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import {
-  Box,
-  Button,
-  MenuItem,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, MenuItem, TextField, Typography } from "@mui/material";
 import type { Event, EventCategory } from "@/services/eventsService";
 
 interface EventFormProps {
@@ -29,10 +23,14 @@ interface FormState {
   date: string;
   location: string;
   description: string;
-  category: EventCategory;
+  category: EventCategory | "";
 }
 
-export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) {
+export function EventForm({
+  initialEvent,
+  onSubmit,
+  onCancel,
+}: EventFormProps) {
   const [form, setForm] = useState<FormState>(() => {
     if (initialEvent) {
       return {
@@ -49,7 +47,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
       date: "",
       location: "",
       description: "",
-      category: "Conference",
+      category: "",
     };
   });
 
@@ -84,6 +82,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
     const eventData: Event = {
       id: initialEvent?.id,
       ...form,
+      category: form.category as EventCategory,
     };
 
     onSubmit(eventData);
@@ -111,6 +110,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
         margin="normal"
         value={form.name}
         onChange={(e) => setForm({ ...form, name: e.target.value })}
+        required
       />
 
       <TextField
@@ -125,6 +125,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
             shrink: true,
           },
         }}
+        required
       />
 
       <TextField
@@ -133,6 +134,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
         margin="normal"
         value={form.location}
         onChange={(e) => setForm({ ...form, location: e.target.value })}
+        required
       />
 
       <TextField
@@ -142,9 +144,8 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
         multiline
         minRows={3}
         value={form.description}
-        onChange={(e) =>
-          setForm({ ...form, description: e.target.value })
-        }
+        onChange={(e) => setForm({ ...form, description: e.target.value })}
+        required
       />
 
       <TextField
@@ -156,6 +157,7 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
         onChange={(e) =>
           setForm({ ...form, category: e.target.value as EventCategory })
         }
+        required
       >
         {categories.map((cat) => (
           <MenuItem key={cat} value={cat}>
@@ -165,7 +167,12 @@ export function EventForm({ initialEvent, onSubmit, onCancel }: EventFormProps) 
       </TextField>
 
       <Box
-        sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mt: 2 }}
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 2,
+          mt: 2,
+        }}
       >
         <Button type="submit" variant="contained">
           {initialEvent ? "Salvar alterações" : "Criar evento"}
