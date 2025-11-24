@@ -51,4 +51,4 @@ describe("authSlice", () => {
     expect(state.role).toBe("admin");
   });
 });
-//vhaa 
+//vhaa Aqui eu testo o comportamento síncrono do slice — inicialização, logout e hidratação do estado.
