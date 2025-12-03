@@ -15,14 +15,6 @@
   ],
   "events": [
     {
-      "id": "bf7a",
-      "name": "Novo evento teste 2",
-      "date": "2026-03-07T20:20",
-      "location": "Floripa",
-      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "category": "Webinar"
-    },
-    {
       "id": "7426",
       "name": "evento1",
       "date": "2026-02-01T00:00",
@@ -45,6 +37,30 @@
       "location": "Kkkkkk",
       "description": " desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
       "category": "Other"
+    },
+    {
+      "id": "788f",
+      "name": "Evento presencial 1",
+      "date": "2026-01-01T01:10",
+      "location": "Floripa",
+      "description": "Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 ",
+      "category": "Networking"
+    },
+    {
+      "id": "6dd6",
+      "name": "Evento presencial 1",
+      "date": "2026-01-01T01:10",
+      "location": "Floripa",
+      "description": "Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 ",
+      "category": "Networking"
+    },
+    {
+      "id": "f6a4",
+      "name": "Evento presencial 1",
+      "date": "2026-01-01T01:10",
+      "location": "Floripa",
+      "description": "Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 ",
+      "category": "Networking"
     }
   ]
 }

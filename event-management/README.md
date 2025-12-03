@@ -63,5 +63,5 @@ npm run json-server
 4. Subir a aplicação Next.js
 Em outro terminal, também dentro de event-management:
 npm run dev
-
+URL: http://localhost:3000
 
