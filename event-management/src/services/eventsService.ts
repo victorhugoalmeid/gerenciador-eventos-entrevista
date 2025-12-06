@@ -2,11 +2,11 @@
 import { api } from "./api";
 
 export type EventCategory =
-  | "Conference"
+  | "Conferência"
   | "Workshop"
   | "Webinar"
   | "Networking"
-  | "Other";
+  | "Outro";
 
 export interface Event {
   id?: number;

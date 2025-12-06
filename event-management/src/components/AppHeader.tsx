@@ -30,19 +30,52 @@ export function AppHeader() {
   }
 
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <AppBar
+      position="static"
+      elevation={0}
+      square
+      sx={{
+        background: "linear-gradient(120deg, #0f172a, #1d4ed8)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 0,
+      }}
+    >
+      <Toolbar
+        sx={{
+          maxWidth: 1200,
+          width: "100%",
+          margin: "0 auto",
+          px: { xs: 2, sm: 3 },
+          minHeight: 76,
+        }}
+      >
         <Typography
           variant="h6"
-          sx={{ flexGrow: 1, cursor: "pointer" }}
+          sx={{
+            flexGrow: 1,
+            cursor: "pointer",
+            fontWeight: 700,
+            letterSpacing: 0.2,
+          }}
           onClick={handleGoHome}
         >
           Gestão de Eventos
         </Typography>
 
         {isAuthenticated && (
-          <Box>
-            <Button color="inherit" onClick={handleLogout}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Button
+              color="inherit"
+              onClick={handleLogout}
+              sx={{
+                textTransform: "none",
+                fontWeight: 700,
+                px: 2.5,
+                py: 1,
+                bgcolor: "rgba(255,255,255,0.08)",
+                "&:hover": { bgcolor: "rgba(255,255,255,0.16)" },
+              }}
+            >
               Sair
             </Button>
           </Box>

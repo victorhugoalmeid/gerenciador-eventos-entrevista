@@ -20,7 +20,7 @@ describe("eventsSlice", () => {
       date: "2030-01-01T10:00",
       location: "Local X",
       description: "Descrição muito grande para passar no teste 123",
-      category: "Conference",
+      category: "Conferência",
     },
     {
       id: 2,
@@ -49,7 +49,7 @@ describe("eventsSlice", () => {
       date: "2032-01-01T14:00",
       location: "Local Z",
       description: "Descrição muito grande para passar no teste",
-      category: "Other",
+      category: "Outro",
     };
 
     const result = eventsReducer(

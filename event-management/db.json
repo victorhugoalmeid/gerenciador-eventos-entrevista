@@ -16,19 +16,19 @@
   "events": [
     {
       "id": "7426",
-      "name": "evento1",
+      "name": "evento teste 1",
       "date": "2026-02-01T00:00",
-      "location": "bc",
+      "location": "São Paulo",
       "description": "dasasdsadsa dsadasdsa dasdsadasdasdas dsadsadas das dasd. dsa dsadsadasd ",
-      "category": "Conference"
+      "category": "Conferência"
     },
     {
       "id": "58e5",
-      "name": "evento 3",
+      "name": "evento teste 2",
       "date": "2026-02-01T00:01",
-      "location": "bcaa",
+      "location": "Minas Gerais",
       "description": "dasasdsadsa dsadasdsa dasdsadasdasdas dsadsadas das dasd. dsa dsadsadasd sadasdasda",
-      "category": "Networking"
+      "category": "Workshop"
     },
     {
       "id": "4453",
@@ -36,23 +36,7 @@
       "date": "2025-11-23T22:10",
       "location": "Kkkkkk",
       "description": " desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc desc",
-      "category": "Other"
-    },
-    {
-      "id": "788f",
-      "name": "Evento presencial 1",
-      "date": "2026-01-01T01:10",
-      "location": "Floripa",
-      "description": "Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 ",
-      "category": "Networking"
-    },
-    {
-      "id": "6dd6",
-      "name": "Evento presencial 1",
-      "date": "2026-01-01T01:10",
-      "location": "Floripa",
-      "description": "Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 Desc 50 ",
-      "category": "Networking"
+      "category": "Outro"
     },
     {
       "id": "f6a4",

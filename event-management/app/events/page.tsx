@@ -138,11 +138,11 @@ export default function EventsListPage() {
             sx={{ minWidth: { xs: "100%", md: 200 } }}
           >
             <MenuItem value="all">Todas</MenuItem>
-            <MenuItem value="Conference">Conference</MenuItem>
+            <MenuItem value="Conferência">Conferência</MenuItem>
             <MenuItem value="Workshop">Workshop</MenuItem>
             <MenuItem value="Webinar">Webinar</MenuItem>
             <MenuItem value="Networking">Networking</MenuItem>
-            <MenuItem value="Other">Other</MenuItem>
+            <MenuItem value="Outro">Outro</MenuItem>
           </TextField>
 
           <TextField

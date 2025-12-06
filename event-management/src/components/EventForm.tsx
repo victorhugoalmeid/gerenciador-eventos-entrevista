@@ -8,14 +8,15 @@ interface EventFormProps {
   initialEvent?: Event;
   onSubmit: (event: Event) => void;
   onCancel?: () => void;
+  showTitle?: boolean;
 }
 
 const categories: EventCategory[] = [
-  "Conference",
+  "Conferência",
   "Workshop",
   "Webinar",
   "Networking",
-  "Other",
+  "Outro",
 ];
 
 interface FormState {
@@ -23,13 +24,14 @@ interface FormState {
   date: string;
   location: string;
   description: string;
-  category: EventCategory | "";
+  category: EventCategory;
 }
 
 export function EventForm({
   initialEvent,
   onSubmit,
   onCancel,
+  showTitle = true,
 }: EventFormProps) {
   const [form, setForm] = useState<FormState>(() => {
     if (initialEvent) {
@@ -47,7 +49,7 @@ export function EventForm({
       date: "",
       location: "",
       description: "",
-      category: "",
+      category: "Conferência",
     };
   });
 
@@ -82,7 +84,7 @@ export function EventForm({
     const eventData: Event = {
       id: initialEvent?.id,
       ...form,
-      category: form.category as EventCategory,
+      category: form.category,
     };
 
     onSubmit(eventData);
@@ -94,9 +96,15 @@ export function EventForm({
       onSubmit={handleSubmit}
       sx={{ mt: 2, display: "flex", flexDirection: "column", gap: 1 }}
     >
-      <Typography variant="h6" gutterBottom>
-        {initialEvent ? "Editar evento" : "Criar novo evento"}
-      </Typography>
+      {showTitle && (
+        <Typography
+          variant="h6"
+          gutterBottom
+          sx={{ fontWeight: 700, color: "text.primary" }}
+        >
+          {initialEvent ? "Editar evento" : "Criar novo evento"}
+        </Typography>
+      )}
 
       {errors && (
         <Typography color="error" sx={{ mb: 2 }}>
