@@ -64,3 +64,10 @@ npm run json-server
 Em outro terminal, também dentro de event-management:
 npm run dev
 URL: http://localhost:3000
+
+<img width="667" height="595" alt="Captura de Tela 2025-12-06 às 21 58 07" src="https://github.com/user-attachments/assets/105be097-754b-4463-b388-f7c0f21e2d26" />
+<img width="662" height="589" alt="Captura de Tela 2025-12-06 às 21 57 47" src="https://github.com/user-attachments/assets/881c7edd-623a-44df-bcd9-2bac68a38d22" />
+<img width="1147" height="593" alt="Captura de Tela 2025-12-06 às 21 55 37" src="https://github.com/user-attachments/assets/bfe1df1a-4062-46ba-a1f5-c3b30303ccd5" />
+<img width="1147" height="595" alt="Captura de Tela 2025-12-06 às 21 54 54" src="https://github.com/user-attachments/assets/5dac132b-b89a-4d97-900c-d59028374e23" />
+<img width="1147" height="584" alt="Captura de Tela 2025-12-06 às 21 53 38" src="https://github.com/user-attachments/assets/4d69b0ee-46a1-4d4b-b7fd-1497ab719140" />
+<img width="1147" height="591" alt="Captura de Tela 2025-12-06 às 21 49 45" src="https://github.com/user-attachments/assets/1406dfe5-7ce9-4e84-9c16-7275351fed90" />
