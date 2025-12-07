@@ -2,9 +2,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Alert, AlertColor, Snackbar } from "@mui/material";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import {
@@ -23,18 +23,35 @@ export default function AdminDashboardPage() {
   const [editingEvent, setEditingEvent] = useState<Event | undefined>(
     undefined
   );
+  const [formVersion, setFormVersion] = useState(0);
+  const [toast, setToast] = useState<{
+    open: boolean;
+    message: string;
+    severity: AlertColor;
+  }>({ open: false, message: "", severity: "success" });
 
   useEffect(() => {
     dispatch(loadEvents());
   }, [dispatch]);
 
+  const notify = (message: string, severity: AlertColor = "success") => {
+    setToast({ open: true, message, severity });
+  };
+
   const handleCreateOrUpdate = async (event: Event) => {
-    if (event.id) {
-      await dispatch(editEvent(event));
-    } else {
-      await dispatch(addEvent(event));
+    try {
+      if (event.id) {
+        await dispatch(editEvent(event)).unwrap();
+        notify("Evento atualizado com sucesso.", "success");
+      } else {
+        await dispatch(addEvent(event)).unwrap();
+        notify("Evento criado com sucesso.", "success");
+      }
+      setEditingEvent(undefined);
+      setFormVersion((v) => v + 1);
+    } catch (error) {
+      notify("Não foi possível salvar o evento. Tente novamente.", "error");
     }
-    setEditingEvent(undefined);
   };
 
   const handleEditClick = (event: Event) => {
@@ -43,7 +60,12 @@ export default function AdminDashboardPage() {
 
   const handleDeleteClick = async (id?: number) => {
     if (!id) return;
-    await dispatch(removeEvent(id));
+    try {
+      await dispatch(removeEvent(id)).unwrap();
+      notify("Evento removido com sucesso.", "success");
+    } catch (error) {
+      notify("Não foi possível remover o evento. Tente novamente.", "error");
+    }
   };
 
   const now = new Date();
@@ -100,10 +122,11 @@ export default function AdminDashboardPage() {
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <EventForm
-                key={editingEvent?.id ?? "new"}
+                key={`${editingEvent?.id ?? "new"}-${formVersion}`}
                 initialEvent={editingEvent}
                 onSubmit={handleCreateOrUpdate}
                 onCancel={() => setEditingEvent(undefined)}
+                onNotify={notify}
                 showTitle={false}
               />
             </div>
@@ -238,10 +261,22 @@ export default function AdminDashboardPage() {
           </section>
         </div>
       </div>
+
+      <Snackbar
+        open={toast.open}
+        autoHideDuration={3000}
+        onClose={() => setToast({ ...toast, open: false })}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setToast({ ...toast, open: false })}
+          severity={toast.severity}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {toast.message}
+        </Alert>
+      </Snackbar>
     </ProtectedRoute>
   );
 }
-//vhaa Ao invés de usar useEffect para sincronizar props com state 
-//que o próprio React hoje desincentiva e mostra um warnning 
-//No painel do admin, integrei o formulário de criação/edição com o Redux. Ao clicar em editar, o formulário é preenchido com o evento atual
-//Ao salvar, decido se é create ou update baseado na presença de id. A listagem é carregada via thunk loadEvents, e delete chama o thunk removeEvent

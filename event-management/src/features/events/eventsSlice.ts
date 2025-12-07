@@ -104,5 +104,4 @@ const eventsSlice = createSlice({
 });
 
 export default eventsSlice.reducer;
-//vhaa Aqui usei createAsyncThunk para padronizar o fluxo assíncrono no Redux. 
 //O slice controla loading, erro e mantém a lista de eventos atualizada localmente.

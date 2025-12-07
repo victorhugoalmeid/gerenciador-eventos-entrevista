@@ -8,6 +8,7 @@ interface EventFormProps {
   initialEvent?: Event;
   onSubmit: (event: Event) => void;
   onCancel?: () => void;
+  onNotify?: (message: string, severity: "success" | "warning" | "error") => void;
   showTitle?: boolean;
 }
 
@@ -31,6 +32,7 @@ export function EventForm({
   initialEvent,
   onSubmit,
   onCancel,
+  onNotify,
   showTitle = true,
 }: EventFormProps) {
   const [form, setForm] = useState<FormState>(() => {
@@ -66,16 +68,19 @@ export function EventForm({
       !form.category
     ) {
       setErrors("Todos os campos são obrigatórios.");
+      onNotify?.("Preencha todos os campos obrigatórios.", "warning");
       return;
     }
 
     if (form.description.length < 50) {
       setErrors("A descrição deve ter pelo menos 50 caracteres.");
+      onNotify?.("A descrição deve ter no mínimo 50 caracteres.", "warning");
       return;
     }
 
     if (new Date(form.date) <= new Date()) {
       setErrors("A data deve ser futura.");
+      onNotify?.("Selecione uma data futura para o evento.", "warning");
       return;
     }
 

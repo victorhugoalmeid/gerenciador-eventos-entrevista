@@ -53,4 +53,3 @@ export const theme = createTheme({
     },
   },
 });
-//vhaa Criei um tema customizado com base no Material UI 6 para padronizar cor, tipografia e estilo de botões

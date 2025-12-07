@@ -49,4 +49,3 @@ export function sortEvents(
 
   return sorted;
 }
-//vhaa Para melhorar a legibilidade, criei esse utils responsavel por separar eventos passados e futuros e por ordená-los por data ou nome

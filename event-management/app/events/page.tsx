@@ -187,8 +187,3 @@ export default function EventsListPage() {
     </ProtectedRoute>
   );
 }
-//vhaa
-//Na tela de leitor, carreguei os eventos via thunk loadEvents do Redux
-//Usei useMemo para aplicar busca, filtro por categoria e ordenação sem recomputar desnecessariamente
-//Separo os eventos em futuros e passados usando o helper splitEventsByDate
-//A interface permite o usuário procurar por nome/local/descrição, filtrar por categoria e ordenar por data ou nome, tanto crescente quanto decrescente

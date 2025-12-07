@@ -85,6 +85,3 @@ describe("eventsSlice", () => {
     expect(result.items[0].id).toBe(2);
   });
 });
-//vhaa aqui eu garanto que a lógica de manipulação do estado 
-//(adicionar, atualizar, remover e carregar) funciona corretamente mesmo sem API
-//Isso assegura que o Redux está consistente antes de conectar a UI.
